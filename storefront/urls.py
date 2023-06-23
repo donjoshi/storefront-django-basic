@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from file_upload.views import upload_file,success
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('playground/',include('playground.urls'))
+    path('playground/',include('playground.urls')),
+    path('upload/',upload_file,name='upload'),
+    path('success/',success,name='success'),
 ]
